@@ -42,10 +42,20 @@
     }
   }
 
+  .message {
+    @include mixins.flex(space-between, center);
+  }
+
   // Customise Mat Icon
   .mat-icon-button {
     border-color: rgba(var.$white, 0.1);
     background-color: rgba(var.$white, 0.1);
     color: var.$white;
+  }
+}
+
+::ng-deep {
+  .mat-mdc-menu-panel {
+    min-width: 142px !important;
   }
 }

@@ -22,35 +22,39 @@
           <!-- Flagged -->
           <ng-container *ngSwitchCase="'flagged'">
             <div class="flex-start flagged-data" [style.gap]="'8px'">
-              <button
-                mat-raised-button
-                #tooltip="matTooltip"
-                [matTooltip]="element.tooltip"
-                [matTooltipClass]="'data-table-tooltip'"
-                matTooltipPosition="right"
-                aria-tooltip="Button that displays and hides a tooltip triggered by other buttons"
-              >
-                <mat-icon
-                  aria-hidden="true"
-                  fontIcon="person_alert"
-                  class="text-md text-red"
-                ></mat-icon>
-              </button>
+              <ng-container *ngIf="element.marked">
+                <button
+                  mat-raised-button
+                  #tooltip="matTooltip"
+                  [matTooltip]="element.markedTooltip"
+                  [matTooltipClass]="'data-table-tooltip'"
+                  matTooltipPosition="right"
+                  aria-tooltip="Button that displays and hides a tooltip triggered by other buttons"
+                >
+                  <mat-icon
+                    aria-hidden="true"
+                    fontIcon="person_alert"
+                    class="text-md text-red"
+                  ></mat-icon>
+                </button>
+              </ng-container>
 
-              <button
-                mat-raised-button
-                #tooltip="matTooltip"
-                [matTooltip]="element.tooltip"
-                [matTooltipClass]="'data-table-tooltip'"
-                matTooltipPosition="right"
-                aria-tooltip="Button that displays and hides a tooltip triggered by other buttons"
-              >
-                <mat-icon
-                  aria-hidden="true"
-                  fontIcon="data_alert"
-                  class="text-md text-red"
-                ></mat-icon>
-              </button>
+              <ng-container *ngIf="element.flagged">
+                <button
+                  mat-raised-button
+                  #tooltip="matTooltip"
+                  [matTooltip]="element.flaggedTooltip"
+                  [matTooltipClass]="'data-table-tooltip'"
+                  matTooltipPosition="right"
+                  aria-tooltip="Button that displays and hides a tooltip triggered by other buttons"
+                >
+                  <mat-icon
+                    aria-hidden="true"
+                    fontIcon="data_alert"
+                    class="text-md text-red"
+                  ></mat-icon>
+                </button>
+              </ng-container>
             </div>
           </ng-container>
 

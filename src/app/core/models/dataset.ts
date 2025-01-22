@@ -4,8 +4,10 @@ export interface Dataset {
   uploadedBy: string;
   updated: string;
   flagged: boolean;
-  tooltip?: string;
+  marked: boolean;
   type: DatasetTypeEnum;
+  flaggedTooltip?: string;
+  markedTooltip?: string;
 }
 
 export enum DatasetTypeEnum {

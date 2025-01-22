@@ -6,55 +6,64 @@
 
       <div class="card padding-md shadow dashboard-content">
         <!-- Statistics -->
-        <div class="col-3 dashboard-stats">
-          @for (stats of stats(); track stats) {
-            <app-stats-card [stats]="stats" />
-          }
-        </div>
+        @if (stats().length) {
+          <div class="col-3 dashboard-stats">
+            @for (stats of stats(); track stats) {
+              <app-stats-card [stats]="stats" />
+            }
+          </div>
+        }
 
         <!-- Datasets Table -->
-        <div>
-          <h3 class="text-md dashboard-title">Datasets Pending Review</h3>
-          <app-datasets-table [datasets]="datasets()" />
-        </div>
+        @if (datasets().length) {
+          <div>
+            <h3 class="text-md dashboard-title">Datasets Pending Review</h3>
+            <app-datasets-table [datasets]="datasets()" />
+          </div>
+        }
       </div>
 
       <!-- Datasets Cards -->
-      <div class="col-3 dashboard-datasets">
-        @for (dataset of filteredDataSets(); track dataset.title) {
-          <app-toggle-card
-            [title]="dataset.title"
-            route="/placeholder"
-            size="sm"
-            routeButtonShape="round"
-            cardStyle="shadow"
-            [hasHeader]="true"
-          >
-            <app-data-list [datasets]="dataset.datasets" />
-          </app-toggle-card>
-        }
-        <!-- Connections Card -->
-        <app-connections [connections]="connections()" />
-      </div>
+      @if (datasets().length) {
+        <div class="col-3 dashboard-datasets">
+          @for (dataset of filteredDataSets(); track dataset.title) {
+            <app-toggle-card
+              [title]="dataset.title"
+              route="/placeholder"
+              size="sm"
+              [spaceContentBottom]="false"
+              routeButtonShape="round"
+              cardStyle="shadow"
+              [hasHeader]="true"
+            >
+              <app-data-list [datasets]="dataset.datasets" />
+            </app-toggle-card>
+          }
+          <!-- Connections Card - Using Async Pipe -->
+          <app-connections [connections]="(connections$ | async) || []" />
+        </div>
+      }
     </div>
   </article>
 
   <!-- Sidebar -->
   <aside class="dashboard-side">
-    <!-- Recently Available Datasets -->
-    <div>
-      <app-toggle-card
-        [hasHeader]="true"
-        [hasToggle]="false"
-        [initialState]="'expanded'"
-        [spaceContentBottom]="false"
-        [spaceContentTop]="false"
-        title="Recently Available Datasets"
-        route="/placeholder"
-      >
-        <app-data-list [datasets]="recentDatasets()"></app-data-list>
-      </app-toggle-card>
-    </div>
+    @if (datasets().length) {
+      <!-- Recently Available Datasets -->
+      <div>
+        <app-toggle-card
+          [hasHeader]="true"
+          [hasToggle]="false"
+          [initialState]="'expanded'"
+          [spaceContentBottom]="false"
+          [spaceContentTop]="false"
+          title="Recently Available Datasets"
+          route="/placeholder"
+        >
+          <app-data-list [datasets]="recentDatasets()"></app-data-list>
+        </app-toggle-card>
+      </div>
+    }
     <!-- User Activity -->
     <app-activity></app-activity>
   </aside>

@@ -9,7 +9,16 @@
   color: var.$text-on-light;
   background-color: var.$grey-01;
   border-radius: 0.255rem;
+  cursor: pointer;
   @include mixins.border(var.$grey-03, 0.5px);
+
+  &:not(.hover-icon):hover {
+    background-color: var.$primary-blue;
+    color: var.$white;
+  }
+  &:hover {
+    background-color: var.$grey-02;
+  }
 
   // Button Icon
   .mat-icon {

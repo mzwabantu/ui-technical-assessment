@@ -4,7 +4,7 @@
     <div class="user-info flex-end">
       <button
         mat-icon-button
-        class="mat-icon-button"
+        class="mat-icon-button hover-icon"
         aria-label="View notifications"
         [attr.aria-live]="'polite'"
         [attr.aria-describedby]="'notifications-description'"
@@ -46,9 +46,23 @@
         />
       </button>
       <mat-menu #menu="matMenu" aria-label="User menu">
-        <button mat-menu-item aria-label="View datasets">Datasets</button>
-        <button mat-menu-item aria-label="View profile">Profile</button>
-        <button mat-menu-item aria-label="Logout">Logout</button>
+        <button
+          [routerLink]="['/placeholder']"
+          mat-menu-item
+          aria-label="View datasets"
+        >
+          Datasets
+        </button>
+        <button
+          [routerLink]="['/placeholder']"
+          mat-menu-item
+          aria-label="View profile"
+        >
+          Profile
+        </button>
+        <button (click)="logout()" mat-menu-item aria-label="Logout">
+          Logout
+        </button>
       </mat-menu>
     </div>
   </div>

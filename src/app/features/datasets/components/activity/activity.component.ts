@@ -1,9 +1,13 @@
 import { Component, Input } from "@angular/core";
+import { RouterLink } from "@angular/router";
+import { AsyncPipe, DatePipe, TitleCasePipe } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
-import { DatePipe, TitleCasePipe } from "@angular/common";
+
 import { ToggleCardComponent } from "../../../../shared/components/toggle-card/toggle-card.component";
 import { Activity } from "../../../../core/models/activity";
-import { RouterLink } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { map, Observable } from "rxjs";
+import { selectActivities } from "../../../../core/state/app.selectors";
 
 @Component({
   selector: "app-activity",
@@ -13,32 +17,27 @@ import { RouterLink } from "@angular/router";
     TitleCasePipe,
     DatePipe,
     RouterLink,
+    AsyncPipe,
   ],
   templateUrl: "./activity.component.html",
   styleUrl: "./activity.component.scss",
 })
 export class ActivityComponent {
-  @Input() activity: Activity[] = [
-    {
-      timestamp: "2024-11-05T18:00:00Z",
-      type: "login",
-      username: "Jennifer Doe",
-      dataset: null,
-      status: null,
-    },
-    {
-      timestamp: "2024-09-23T14:24:00Z",
-      type: "upload",
-      username: "Jennifer Doe",
-      dataset: "Dataset 01",
-      status: null,
-    },
-    {
-      timestamp: "2024-08-17T10:30:00Z",
-      type: "issue",
-      username: "Jennifer Doe",
-      dataset: "Dataset 03",
-      status: "Hydration Failed",
-    },
-  ];
+  activities$: Observable<Activity[]>;
+
+  constructor(private store: Store) {
+    this.activities$ = this.store
+      .select(selectActivities)
+      .pipe(
+        map((data) =>
+          [...data]
+            .sort(
+              (a, b) =>
+                new Date(b.timestamp).getTime() -
+                new Date(a.timestamp).getTime(),
+            )
+            .slice(0, 3),
+        ),
+      );
+  }
 }

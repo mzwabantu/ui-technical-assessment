@@ -6,5 +6,5 @@ export interface Activity {
   status: ActivityStatusType;
 }
 
-export type ActivityType = "login" | "issue" | "upload";
+export type ActivityType = "login" | "logout" | "issue" | "upload";
 export type ActivityStatusType = "Hydration Failed" | null;

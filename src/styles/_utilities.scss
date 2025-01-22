@@ -59,6 +59,9 @@
   left: -1.5rem;
   right: -1.5rem;
 }
+.absolute {
+  position: absolute;
+}
 
 // Borders
 .border {
@@ -84,6 +87,9 @@
   & * {
     position: relative;
   }
+}
+.reset-mat-icon {
+  @include mixins.resetMatIconSize();
 }
 
 // Appearance

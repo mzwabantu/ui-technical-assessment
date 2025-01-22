@@ -10,7 +10,11 @@
   <!-- Title and Description -->
   <div>
     <h1 class="banner-title">{{ title }}</h1>
-    <p class="banner-description">{{ description }}</p>
+    <p class="banner-description">
+      {{
+        description || "You have " + notificationsCount + " new notifications"
+      }}
+    </p>
   </div>
 
   <!-- Notifications Button -->
@@ -21,13 +25,27 @@
     aria-live="polite"
     aria-describedby="notifications-list"
     [matMenuTriggerFor]="notifications"
+    [hidden]="!notificationsCount"
   >
     <mat-icon fontIcon="keyboard_arrow_down" aria-hidden="true"></mat-icon>
   </button>
 
   <!-- Notifications Dropdown -->
   <mat-menu #notifications="matMenu" aria-label="User menu">
-    <button mat-menu-item aria-label="View profile">Profile</button>
-    <button mat-menu-item aria-label="Logout">Logout</button>
+    <ng-container *ngFor="let item of notifications$ | async">
+      <button
+        (click)="onRead(item)"
+        *ngIf="!item.read"
+        mat-menu-item
+        aria-label="Logout"
+      >
+        <strong><span class="text-blue">New</span> {{ item.message }}</strong>
+        <div class="message">
+          <strong class="text-grey"
+            ><small>{{ item.timestamp | date: "dd MMM yyyy" }}</small></strong
+          >
+        </div>
+      </button>
+    </ng-container>
   </mat-menu>
 </div>

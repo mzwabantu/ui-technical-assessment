@@ -8,13 +8,15 @@
 >
   <!-- Binds/Map connections to template -->
   @for (connection of connections; track connection.name) {
-    <div>
+    <div [style.paddingBottom]="'5px'">
       <div class="flex-start">
-        <h4 class="text-sm">{{ connection.name }}:</h4>
+        <h4 class="text-sm" [style.fontWeight]="600">{{ connection.name }}:</h4>
         &nbsp;
-        <p class="text-sm">{{ connection.type }}</p>
+        <p class="text-sm">
+          {{ connection.type }}
+        </p>
       </div>
-      <p class="text-sm text-grey">
+      <p class="text-sm text-grey flex-start">
         {{ connection.lastSynced | date: "dd MMM yyyy HH:mm" }}
       </p>
     </div>

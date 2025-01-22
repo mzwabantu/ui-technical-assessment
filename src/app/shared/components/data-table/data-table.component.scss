@@ -25,6 +25,9 @@
 
         // Shows icon on hover
         .dataset-name {
+          &:hover {
+            cursor: pointer;
+          }
           mat-icon {
             opacity: 1;
             visibility: visible;

@@ -34,8 +34,14 @@
     }
 
     // Applies hover state if hasToggle is true
-    &.willHover:hover {
-      border-color: var.$primary-blue;
+    &.willHover {
+      &:hover {
+        border-color: var.$primary-blue;
+      }
+
+      .toggle-card-title:hover {
+        cursor: pointer;
+      }
     }
   }
 

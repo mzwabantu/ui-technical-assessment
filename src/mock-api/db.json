@@ -5,74 +5,220 @@
       "uploadedBy": "Jeanette Edwards",
       "updated": "2024-09-01",
       "flagged": true,
-      "tooltip": "This dataset has been flagged as containing a high error rate.",
-      "type": "My Datasets"
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": false,
+      "markedTooltip": null,
+      "type": "My Datasets",
+      "id": "1202"
     },
     {
       "datasetName": "Dataset 02",
       "uploadedBy": "Melvin Fitzgerald",
       "updated": "2024-09-17",
       "flagged": false,
-      "type": "Recently Available Datasets"
+      "flaggedTooltip": null,
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "Recently Available Datasets",
+      "id": "8322"
     },
     {
       "datasetName": "Dataset 03",
       "uploadedBy": "Jennifer Doe",
       "updated": "2024-09-20",
       "flagged": true,
-      "tooltip": "This dataset has been marked as possibly containing personal information.",
-      "type": "Partner Datasets"
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "Partner Datasets",
+      "id": "5f79"
     },
     {
       "datasetName": "Dataset 04",
       "uploadedBy": "Lulu Morton",
       "updated": "2024-09-01",
       "flagged": false,
-      "type": "My Datasets"
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "My Datasets",
+      "id": "b20a"
     },
     {
       "datasetName": "Dataset 05",
       "uploadedBy": "Robert Johnson",
       "updated": "2024-10-05",
       "flagged": false,
-      "type": "Partner Datasets"
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Partner Datasets",
+      "id": "139b"
     },
     {
       "datasetName": "Dataset 06",
       "uploadedBy": "Melvin Fitzgerald",
       "updated": "2024-09-25",
       "flagged": true,
-      "tooltip": "This dataset has been flagged for potential duplicates.",
-      "type": "Recently Available Datasets"
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Recently Available Datasets",
+      "id": "fddf"
     },
     {
       "datasetName": "Dataset 07",
       "uploadedBy": "Jeanette Edwards",
       "updated": "2024-09-30",
       "flagged": false,
-      "type": "Partner Datasets"
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Partner Datasets",
+      "id": "b5fe"
     },
     {
       "datasetName": "Dataset 08",
       "uploadedBy": "Jennifer Doe",
       "updated": "2024-10-10",
       "flagged": true,
-      "tooltip": "This dataset contains missing metadata.",
-      "type": "My Datasets"
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "My Datasets",
+      "id": "af74"
     },
     {
       "datasetName": "Dataset 09",
       "uploadedBy": "Lulu Morton",
       "updated": "2024-08-20",
       "flagged": false,
-      "type": "Recently Available Datasets"
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Recently Available Datasets",
+      "id": "4313"
     },
     {
       "datasetName": "Dataset 10",
       "uploadedBy": "Robert Johnson",
       "updated": "2024-09-15",
       "flagged": false,
-      "type": "My Datasets"
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "My Datasets",
+      "id": "3880"
+    },
+    {
+      "datasetName": "Dataset 11",
+      "uploadedBy": "Jennifer Doe",
+      "updated": "2024-11-11",
+      "flagged": true,
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Partner Datasets",
+      "id": "ebf8"
+    },
+    {
+      "datasetName": "Dataset 12",
+      "uploadedBy": "Lulu Morton",
+      "updated": "2024-11-09",
+      "flagged": true,
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Recently Available Datasets",
+      "id": "d4e4"
+    },
+    {
+      "datasetName": "Dataset 13",
+      "uploadedBy": "Jeanette Edwards",
+      "updated": "2024-11-09",
+      "flagged": false,
+      "flaggedTooltip": null,
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "My Datasets",
+      "id": "44ef"
+    },
+    {
+      "datasetName": "Dataset 14",
+      "uploadedBy": "Melvin Fitzgerald",
+      "updated": "2024-10-01",
+      "flagged": false,
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Recently Available Datasets",
+      "id": "6e7e"
+    },
+    {
+      "datasetName": "Dataset 15",
+      "uploadedBy": "Robert Johnson",
+      "updated": "2024-10-05",
+      "flagged": false,
+      "flaggedTooltip": null,
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "My Datasets",
+      "id": "c427"
+    },
+    {
+      "datasetName": "Dataset 16",
+      "uploadedBy": "Lulu Morton",
+      "updated": "2024-11-09",
+      "flagged": false,
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Recently Available Datasets",
+      "id": "6350"
+    },
+    {
+      "datasetName": "Dataset 17",
+      "uploadedBy": "Jennifer Doe",
+      "updated": "2024-10-15",
+      "flagged": true,
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "Partner Datasets",
+      "id": "c56d"
+    },
+    {
+      "datasetName": "Dataset 18",
+      "uploadedBy": "Robert Johnson",
+      "updated": "2024-11-08",
+      "flagged": false,
+      "flaggedTooltip": null,
+      "marked": true,
+      "markedTooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "My Datasets",
+      "id": "c692"
+    },
+    {
+      "datasetName": "Dataset 19",
+      "uploadedBy": "Lulu Morton",
+      "updated": "2024-11-09",
+      "flagged": false,
+      "flaggedTooltip": null,
+      "marked": false,
+      "markedTooltip": null,
+      "type": "Recently Available Datasets",
+      "id": "6a0e"
+    },
+    {
+      "datasetName": "Dataset 20",
+      "uploadedBy": "Jeanette Edwards",
+      "updated": "2024-10-20",
+      "flagged": true,
+      "flaggedTooltip": "This dataset has been flagged as containing a high error rate.",
+      "marked": false,
+      "markedTooltip": null,
+      "type": "My Datasets",
+      "id": "36b2"
     }
   ],
   "stats": [
@@ -80,64 +226,87 @@
       "title": "Dataset Reviews",
       "value": 100,
       "trend": "up",
-      "percentage": 10
+      "percentage": 10,
+      "id": "0814"
     },
     {
       "title": "Failed Uploads",
       "value": 10,
       "trend": "down",
-      "percentage": 2
+      "percentage": 2,
+      "id": "c89f"
     },
     {
       "title": "Shared by Company",
       "value": 15,
       "trend": "up",
-      "percentage": 25
+      "percentage": 25,
+      "id": "06d8"
     }
   ],
   "profile": {
     "name": "Jennifer Doe",
-    "organization": "Bank ABC",
-    "activity": [
-      {
-        "timestamp": "2024-11-05T18:00:00Z",
-        "type": "login",
-        "username": "Jennifer Doe",
-        "dataset": null,
-        "status": null
-      },
-      {
-        "timestamp": "2024-09-23T14:24:00Z",
-        "type": "upload",
-        "username": "Jennifer Doe",
-        "dataset": "Dataset 01",
-        "status": null
-      },
-      {
-        "timestamp": "2024-08-17T10:30:00Z",
-        "description": "Issue {{dataset}}: Hydration Failed",
-        "type": "issue",
-        "username": "Jennifer Doe",
-        "dataset": "Dataset 03",
-        "status": "Hydration Failed"
-      }
-    ]
+    "organization": "Bank ABC"
   },
+  "activity": [
+    {
+      "id": "2",
+      "timestamp": "2024-11-05T18:0:000Z",
+      "type": "login",
+      "username": "Jennifer Doe",
+      "dataset": null,
+      "status": null
+    },
+    {
+      "id": "2",
+      "timestamp": "2024-09-23T14:24:00Z",
+      "type": "upload",
+      "username": "Jennifer Doe",
+      "dataset": "Dataset 01",
+      "status": null
+    },
+    {
+      "id": "3",
+      "timestamp": "2024-08-17T10:30:00Z",
+      "description": "Issue {{dataset}}: Hydration Failed",
+      "type": "issue",
+      "username": "Jennifer Doe",
+      "dataset": "Dataset 03",
+      "status": "Hydration Failed"
+    }
+  ],
   "connections": [
     {
       "name": "Bank ABC",
       "type": "Primary",
-      "lastSynced": "2024-11-03T10:00:00Z"
+      "lastSynced": "2024-11-03T10:00:00Z",
+      "id": "b243"
     },
     {
       "name": "Partner XYZ",
       "type": "Secondary",
-      "lastSynced": "2024-10-20T14:30:00Z"
+      "lastSynced": "2024-10-20T14:30:00Z",
+      "id": "8923"
     },
     {
       "name": "DataHub Corp",
       "type": "Tertiary",
-      "lastSynced": "2024-10-15T08:00:00Z"
+      "lastSynced": "2024-10-15T08:00:00Z",
+      "id": "ba99"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "message": "Dataset 19",
+      "timestamp": "2024-02-22T17:11:57.983Z",
+      "read": false
+    },
+    {
+      "id": "2",
+      "message": "Dataset 14",
+      "timestamp": "2024-01-22T17:11:57.983Z",
+      "read": false
     }
   ]
 }

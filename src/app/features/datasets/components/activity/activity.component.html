@@ -7,12 +7,15 @@
 >
   <ng-container>
     <div class="activity-list">
-      <!-- Map activities to template -->
-      @for (act of activity; track $index) {
+      <!-- Bind activities to template -->
+      @for (act of (activities$ | async) || []; track $index) {
         <div class="activity">
           <div class="activity-title">
             @switch (act.type) {
               @case ("login") {
+                <strong>{{ act.type | titlecase }}: {{ act.username }}</strong>
+              }
+              @case ("logout") {
                 <strong>{{ act.type | titlecase }}: {{ act.username }}</strong>
               }
               @case ("upload") {
