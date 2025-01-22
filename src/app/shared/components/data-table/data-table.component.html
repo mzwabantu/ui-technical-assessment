@@ -1,0 +1,122 @@
+<div class="data-table" [class.border-grey]="hasBorder">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of columns" [matColumnDef]="column.key">
+      <!-- Headings if hasHeader prop is true -->
+      <ng-container *ngIf="hasHeader">
+        <th
+          [ngStyle]="applyColumnOptions(column?.options)"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          {{ column.label }}
+        </th>
+      </ng-container>
+
+      <!-- Table Cells with custom elements by key -->
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [ngStyle]="applyColumnOptions(column?.options)"
+      >
+        <ng-container [ngSwitch]="column.key">
+          <!-- Flagged -->
+          <ng-container *ngSwitchCase="'flagged'">
+            <div class="flex-start flagged-data" [style.gap]="'8px'">
+              <button
+                mat-raised-button
+                #tooltip="matTooltip"
+                [matTooltip]="element.tooltip"
+                [matTooltipClass]="'data-table-tooltip'"
+                matTooltipPosition="right"
+                aria-tooltip="Button that displays and hides a tooltip triggered by other buttons"
+              >
+                <mat-icon
+                  aria-hidden="true"
+                  fontIcon="person_alert"
+                  class="text-md text-red"
+                ></mat-icon>
+              </button>
+
+              <button
+                mat-raised-button
+                #tooltip="matTooltip"
+                [matTooltip]="element.tooltip"
+                [matTooltipClass]="'data-table-tooltip'"
+                matTooltipPosition="right"
+                aria-tooltip="Button that displays and hides a tooltip triggered by other buttons"
+              >
+                <mat-icon
+                  aria-hidden="true"
+                  fontIcon="data_alert"
+                  class="text-md text-red"
+                ></mat-icon>
+              </button>
+            </div>
+          </ng-container>
+
+          <!-- Updated Date -->
+          <ng-container *ngSwitchCase="'updated'">
+            {{ element.updated | date: "dd MMM yyyy" }}
+          </ng-container>
+
+          <!-- Actions -->
+          <ng-container *ngSwitchCase="'actions'">
+            <button
+              mat-icon-button
+              class="mat-icon-button labeled small"
+              (click)="viewDetails(element)"
+            >
+              <mat-icon
+                aria-hidden="true"
+                fontIcon="visibility"
+                class="text-md"
+              ></mat-icon>
+              View
+            </button>
+          </ng-container>
+
+          <!-- Dataset Name -->
+          <ng-container *ngSwitchCase="'datasetName'">
+            <span
+              (click)="viewDetails(element)"
+              class="flex-start dataset-name"
+              [style.gap]="'5px'"
+            >
+              <span>
+                {{ element.datasetName }}
+              </span>
+              <mat-icon
+                aria-hidden="false"
+                aria-label="Visibility icon"
+                fontIcon="visibility"
+                class="text-sm"
+                role="img"
+              />
+            </span>
+          </ng-container>
+
+          <!-- Default Element -->
+          <ng-container *ngSwitchDefault>
+            {{ element[column.key] }}
+          </ng-container>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <!-- Header and Row Declarations -->
+    <ng-container *ngIf="hasHeader">
+      <tr mat-header-row *matHeaderRowDef="displayedColumnKeys"></tr>
+    </ng-container>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnKeys"></tr>
+  </table>
+
+  <!-- Pagination -->
+  <mat-paginator
+    [class.hide-range-label]="hideRangeLabel"
+    #paginator
+    [hidePageSize]="hidePageSize"
+    [pageSize]="4"
+    [pageSizeOptions]="[4, 8, 12]"
+    aria-label="Select page"
+  ></mat-paginator>
+</div>

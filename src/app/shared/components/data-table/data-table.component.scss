@@ -1,0 +1,53 @@
+@use "mixins" as mixins;
+@use "variables" as var;
+
+:host {
+  @include mixins.resetMatIconSize();
+  @include mixins.stylePaginator();
+
+  .data-table {
+    border-radius: var.$spacing-sm;
+    overflow: hidden;
+
+    // Hides icon by default
+    .dataset-name mat-icon {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    // Table styles
+    table {
+      th {
+        background: var.$grey-02;
+      }
+      tr:hover {
+        background-color: var.$grey-01;
+
+        // Shows icon on hover
+        .dataset-name {
+          mat-icon {
+            opacity: 1;
+            visibility: visible;
+          }
+          span {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // Mat component specific customization
+  ::ng-deep {
+    mat-paginator.hide-range-label {
+      .mat-mdc-paginator-range-label {
+        display: none;
+      }
+    }
+
+    .flagged-data .mdc-button {
+      padding: 0;
+      min-width: 24px;
+    }
+  }
+}

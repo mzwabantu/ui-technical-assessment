@@ -1,0 +1,58 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+:host {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    gap: 1rem;
+
+    // Remove flex at screen width 1200px
+    @media screen and (max-width: var.$breakpoint-xl) {
+      display: block;
+    }
+
+    // Dashboard Elements
+    &-content {
+      margin-top: var.$spacing-md;
+    }
+    &-title {
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+    }
+    &-stats {
+      min-height: 84px;
+    }
+    &-datasets {
+      padding: var.$spacing-md 0;
+    }
+
+    // Dashboard Side
+    &-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1rem;
+
+      @media screen and (max-width: var.$breakpoint-xl) {
+        flex-direction: row;
+
+        & > div {
+          flex-basis: 50%;
+        }
+      }
+    }
+
+    // Quick utility class specific to dashboard
+    .col-3 {
+      gap: 1rem;
+      @include mixins.flex(start, start);
+
+      app-stats-card,
+      app-connections,
+      app-toggle-card {
+        flex-basis: 33%;
+      }
+    }
+  }
+}

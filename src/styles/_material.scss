@@ -1,0 +1,119 @@
+@use "@angular/material" as mat;
+@use "@angular/cdk" as cdk;
+@use "./variables" as var;
+@include cdk.a11y-visually-hidden();
+
+:root {
+  // Mat Badge
+  @include mat.badge-overrides(
+    (
+      background-color: var.$primary-blue,
+      text-color: transparent,
+      small-size-container-overlap-offset: -10.5px,
+      container-shape: 10px,
+      small-size-container-size: 8px,
+    )
+  );
+
+  // Mat Menu
+  @include mat.menu-overrides(
+    (
+      container-color: var.$white,
+      item-label-text-color: var.$black,
+      container-shape: 3px,
+      item-label-text-font: var.$font-family,
+      item-label-text-size: var.$font-size-sm,
+      divider-color: var.$grey-03,
+      item-label-text-line-height: 1,
+      container-elevation-shadow: 0 0 0 0.5px var.$grey-03,
+      item-leading-spacing: 24px,
+      item-trailing-spacing: 8px,
+      item-spacing: 0,
+    )
+  );
+
+  // Mat Divider
+  @include mat.divider-overrides(
+    (
+      color: var.$grey-03,
+    )
+  );
+
+  // Mat Table
+  @include mat.table-overrides(
+    (
+      header-headline-color: var.$text-on-light,
+      header-container-height: 42px,
+      header-headline-size: var.$font-size-sm,
+      header-headline-weight: 600,
+      background-color: var.$white,
+      row-item-container-height: 46px,
+      row-item-label-text-size: var.$font-size-sm,
+      row-item-label-text-color: var.$text-on-light,
+    )
+  );
+
+  // Mat Paginator
+  @include mat.paginator-overrides(
+    (
+      container-size: 44px,
+      container-text-color: var.$text-on-light,
+      container-text-size: var.$font-size-sm,
+      form-field-container-height: var.$font-size-lg,
+      form-field-container-vertical-padding: var.$spacing-sm,
+    )
+  );
+
+  // Mat FormField
+  @include mat.form-field-overrides(
+    (
+      outlined-container-shape: var.$spacing-sm,
+      outlined-outline-color: var.$grey-03,
+      container-vertical-padding: 4px,
+      container-height: 24px,
+    )
+  );
+
+  // Mat Select
+  @include mat.select-overrides(
+    (
+      panel-background-color: var.$white,
+      container-elevation-shadow: 0 2px 8px #1e1d590d,
+    )
+  );
+
+  // Mat Tooltip
+  @include mat.tooltip-overrides(
+    (
+      container-color: var.$white,
+      supporting-text-color: var.$text-on-light,
+      supporting-text-size: var.$font-size-sm,
+      container-shape: 6px,
+    )
+  );
+}
+
+/* Google provided cdn for Rounded Symbols not working as expected on my local,
+    with not time to investigate, I rendered this temporal solution to save time */
+.mat-icon {
+  font-family: "Material Symbols Rounded" !important;
+  font-variation-settings:
+    "FILL" 1,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 48;
+}
+
+// Mat Tooltip border
+.mat-mdc-tooltip-surface {
+  border: 1px solid var.$grey-03;
+}
+
+// Mat Menu
+.mat-mdc-menu-item {
+  min-height: 32px !important;
+
+  &:hover {
+    background-color: var.$grey-02 !important;
+  }
+}

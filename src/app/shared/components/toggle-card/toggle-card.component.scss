@@ -1,0 +1,46 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+:host {
+  @include mixins.resetMatIconSize();
+
+  .toggle-card {
+    overflow: hidden;
+
+    // Toggle Card Elements
+    &-header {
+      @include mixins.flex(space-between, center);
+
+      // Sets border bottom if hadHeader is true
+      .header & {
+        border-bottom: 0.5px solid var.$grey-03;
+      }
+    }
+    &-title {
+      font-weight: 600;
+      gap: 0.35rem;
+
+      mat-icon {
+        font-size: 18px;
+      }
+    }
+
+    // Sets padding bottom if paddingBottom is true
+    &-content.paddingBottom {
+      padding-bottom: 14px;
+    }
+    &.sm .toggle-card-content.paddingBottom {
+      padding-bottom: 8px;
+    }
+
+    // Applies hover state if hasToggle is true
+    &.willHover:hover {
+      border-color: var.$primary-blue;
+    }
+  }
+
+  // Mat Divider position
+  .mat-divider {
+    position: absolute;
+  }
+}

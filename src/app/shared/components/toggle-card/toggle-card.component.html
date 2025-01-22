@@ -1,0 +1,82 @@
+<div
+  class="card toggle-card {{ size }} {{ cardStyle }}"
+  [class.willHover]="hasToggle"
+>
+  <!-- Header for card -->
+  <header
+    class="toggle-card-header"
+    [style.paddingBottom]="
+      hasHeader && isExpanded() ? (size === 'sm' ? '8px' : '12px') : 0
+    "
+  >
+    <!-- Title in Header -->
+    <h3
+      class="toggle-card-title flex-start {{
+        largeTitle ? 'text-md' : 'text-sm'
+      }}"
+      (click)="toggleDetail()"
+      role="button"
+      tabindex="0"
+      [attr.aria-expanded]="isExpanded()"
+      aria-controls="card-detail"
+    >
+      {{ title }}
+      <!-- Chevron icon - shows if showToggle is true -->
+      <ng-container *ngIf="hasToggle">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Arrow icon"
+          [fontIcon]="toggleIcon"
+        ></mat-icon>
+      </ng-container>
+    </h3>
+
+    <!-- Button to navigate to detailed page -->
+    <ng-container *ngIf="route">
+      <button
+        mat-icon-button
+        class="mat-icon-button"
+        (click)="goToPage()"
+        [ngClass]="{
+          'round small': routeButtonShape === 'round',
+          medium: routeButtonShape === 'square',
+        }"
+        aria-label="View details page"
+        [attr.aria-live]="'polite'"
+        [attr.aria-describedby]="'details-page'"
+      >
+        <mat-icon
+          matBadge="1"
+          aria-hidden="false"
+          aria-label="Link icon"
+          fontIcon="north_east"
+          matBadgeSize="small"
+          role="img"
+        />
+        <span class="cdk-visually-hidden">View more details on link.</span>
+      </button>
+    </ng-container>
+
+    <!-- Divider - shows if hasHeader is true -->
+    <ng-container *ngIf="isExpanded() && hasHeader">
+      <mat-divider
+        role="separator"
+        aria-hidden="true"
+        class="bleed"
+      ></mat-divider>
+    </ng-container>
+  </header>
+
+  <!-- Content section - shows id isExpanded is true -->
+  <ng-container *ngIf="isExpanded()">
+    <section
+      class="toggle-card-content"
+      [style.paddingTop]="
+        (hasHeader && spaceContentTop) || spaceContentTop ? '16px' : 0
+      "
+      [class.paddingBottom]="spaceContentBottom"
+    >
+      <ng-content></ng-content>
+    </section>
+  </ng-container>
+</div>

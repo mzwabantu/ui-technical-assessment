@@ -2,7 +2,7 @@
 
 
 ## Project Setup
-1. Clone the repository [UI Technical Assessment](https://github.com/)
+1. Clone the repository [UI Technical Assessment](https://github.com/mzwabantu/ui-technical-assessment)
 2. Run `npm install` to install dependencies.
 3. Run `npm start` to start the Angular Application.
 4. Run `npm start:mock-api` to start the mock API.

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:mock-api": "json-server --watch mock-api/db.json --port 3000",
+    "start:mock-api": "json-server --watch src/mock-api/db.json --port 3000",
     "start:dev": "npm-run-all -p start:mock-api start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -15,6 +15,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.1.0",
+    "@angular/cdk": "^19.1.0",
     "@angular/common": "^19.1.0",
     "@angular/compiler": "^19.1.0",
     "@angular/core": "^19.1.0",

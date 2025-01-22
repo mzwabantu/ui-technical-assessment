@@ -1,0 +1,51 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+:host {
+  .banner {
+    // Banner container styles
+    position: relative;
+    overflow: hidden;
+    background-color: var.$primary-blue;
+    background-image: linear-gradient(
+      -45deg,
+      rgba(var.$primary-blue, 20),
+      transparent
+    );
+    color: var.$white;
+    border-radius: 6px;
+    padding: var.$spacing-lg var.$spacing-md;
+    min-height: 92px;
+    @include mixins.flex(space-between, center);
+
+    // Specifying position to contain absolute child nodes
+    & > div,
+    & > button {
+      position: relative;
+    }
+
+    // Banner Elements
+    &-title {
+      font-size: var.$font-size-lg;
+      font-weight: 600;
+    }
+    &-description {
+      font-weight: 400;
+      font-size: var.$font-size-md;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // Customise Mat Icon
+  .mat-icon-button {
+    border-color: rgba(var.$white, 0.1);
+    background-color: rgba(var.$white, 0.1);
+    color: var.$white;
+  }
+}

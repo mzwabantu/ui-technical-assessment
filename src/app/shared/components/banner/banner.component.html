@@ -1,0 +1,33 @@
+<div class="banner" role="banner" aria-label="Page banner">
+  <!-- Banner Image -->
+  <img
+    [src]="imgSrc"
+    alt="Background image for user's number of notifications banner message"
+    role="img"
+    aria-hidden="true"
+  />
+
+  <!-- Title and Description -->
+  <div>
+    <h1 class="banner-title">{{ title }}</h1>
+    <p class="banner-description">{{ description }}</p>
+  </div>
+
+  <!-- Notifications Button -->
+  <button
+    mat-icon-button
+    class="mat-icon-button"
+    aria-label="View notifications"
+    aria-live="polite"
+    aria-describedby="notifications-list"
+    [matMenuTriggerFor]="notifications"
+  >
+    <mat-icon fontIcon="keyboard_arrow_down" aria-hidden="true"></mat-icon>
+  </button>
+
+  <!-- Notifications Dropdown -->
+  <mat-menu #notifications="matMenu" aria-label="User menu">
+    <button mat-menu-item aria-label="View profile">Profile</button>
+    <button mat-menu-item aria-label="Logout">Logout</button>
+  </mat-menu>
+</div>

@@ -1,0 +1,22 @@
+<app-toggle-card
+  title="Connections"
+  route="/placeholder"
+  size="sm"
+  routeButtonShape="round"
+  cardStyle="shadow"
+  [hasHeader]="true"
+>
+  <!-- Binds/Map connections to template -->
+  @for (connection of connections; track connection.name) {
+    <div>
+      <div class="flex-start">
+        <h4 class="text-sm">{{ connection.name }}:</h4>
+        &nbsp;
+        <p class="text-sm">{{ connection.type }}</p>
+      </div>
+      <p class="text-sm text-grey">
+        {{ connection.lastSynced | date: "dd MMM yyyy HH:mm" }}
+      </p>
+    </div>
+  }
+</app-toggle-card>

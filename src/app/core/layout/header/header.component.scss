@@ -1,0 +1,41 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+:host {
+  // Mat Toolbar
+  .mat-toolbar {
+    background-color: var.$white;
+    color: var.$text-on-light;
+    padding: var.$spacing-sm var.$spacing-md;
+    border-bottom: 0.5px solid var.$grey-03;
+
+    .user-info {
+      gap: var.$spacing-md;
+
+      .mat-divider {
+        align-self: stretch;
+      }
+    }
+  }
+
+  // Menu Button Reset
+  .menu-trigger {
+    background: unset;
+    border: unset;
+    @include mixins.flex(end, center);
+    gap: var.$spacing-sm;
+  }
+
+  // User Details
+  .user {
+    text-align: left;
+
+    &-name {
+      line-height: var.$line-height;
+      font-weight: 600;
+    }
+    &-company {
+      line-height: 1;
+    }
+  }
+}

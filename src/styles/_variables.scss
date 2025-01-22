@@ -1,0 +1,38 @@
+// Colors
+$primary-blue: #1678d1;
+$secondary-blue: #99c9f8;
+$red: #eb4528;
+$green: #75bb34;
+$white: #ffffff;
+$grey: #f2f5f9;
+$grey-01: #f4f4f5;
+$grey-02: #efeff0;
+$grey-03: #dbdcdd;
+$grey-04: #c7c8cb;
+$grey-05: #b2b5b8;
+$grey-06: #626973;
+$black: #1d242d;
+
+// Font settings
+$font-family: "Poppins", sans-serif;
+$font-size-lg: 22px;
+$font-size-md: 14px;
+$font-size-sm: 12px;
+$font-size-xs: 10px;
+$line-height: 1.5;
+
+// WCAG-compliant text colors
+$text-on-light: $black;
+$text-on-dark: $white;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 18px;
+$spacing-lg: 24px;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

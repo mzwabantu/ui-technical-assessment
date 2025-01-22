@@ -1,0 +1,28 @@
+@if (stats) {
+  <app-toggle-card
+    [title]="stats.title"
+    [initialState]="'expanded'"
+    [spaceContentBottom]="false"
+    [spaceContentTop]="false"
+    [updateToggleIcon]="false"
+    [largeTitle]="true"
+  >
+    <!-- Stats Value -->
+    <p class="stats-card flex-start text-sm">
+      <strong>{{ stats.value }}</strong>
+      <!-- Using colorCode Directive to change 
+        percentage and icon color based on trend -->
+      <span
+        class="flex-start text-sm"
+        *ngIf="stats.percentage"
+        [colorCode]="stats.trend"
+        ><mat-icon
+          aria-hidden="false"
+          aria-label="Arrow icon"
+          [fontIcon]="stats.value === 100 ? 'south_west' : statIcon"
+        ></mat-icon>
+        {{ stats.percentage }}%</span
+      >
+    </p>
+  </app-toggle-card>
+}

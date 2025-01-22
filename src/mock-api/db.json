@@ -1,0 +1,143 @@
+{
+  "datasets": [
+    {
+      "datasetName": "Dataset 01",
+      "uploadedBy": "Jeanette Edwards",
+      "updated": "2024-09-01",
+      "flagged": true,
+      "tooltip": "This dataset has been flagged as containing a high error rate.",
+      "type": "My Datasets"
+    },
+    {
+      "datasetName": "Dataset 02",
+      "uploadedBy": "Melvin Fitzgerald",
+      "updated": "2024-09-17",
+      "flagged": false,
+      "type": "Recently Available Datasets"
+    },
+    {
+      "datasetName": "Dataset 03",
+      "uploadedBy": "Jennifer Doe",
+      "updated": "2024-09-20",
+      "flagged": true,
+      "tooltip": "This dataset has been marked as possibly containing personal information.",
+      "type": "Partner Datasets"
+    },
+    {
+      "datasetName": "Dataset 04",
+      "uploadedBy": "Lulu Morton",
+      "updated": "2024-09-01",
+      "flagged": false,
+      "type": "My Datasets"
+    },
+    {
+      "datasetName": "Dataset 05",
+      "uploadedBy": "Robert Johnson",
+      "updated": "2024-10-05",
+      "flagged": false,
+      "type": "Partner Datasets"
+    },
+    {
+      "datasetName": "Dataset 06",
+      "uploadedBy": "Melvin Fitzgerald",
+      "updated": "2024-09-25",
+      "flagged": true,
+      "tooltip": "This dataset has been flagged for potential duplicates.",
+      "type": "Recently Available Datasets"
+    },
+    {
+      "datasetName": "Dataset 07",
+      "uploadedBy": "Jeanette Edwards",
+      "updated": "2024-09-30",
+      "flagged": false,
+      "type": "Partner Datasets"
+    },
+    {
+      "datasetName": "Dataset 08",
+      "uploadedBy": "Jennifer Doe",
+      "updated": "2024-10-10",
+      "flagged": true,
+      "tooltip": "This dataset contains missing metadata.",
+      "type": "My Datasets"
+    },
+    {
+      "datasetName": "Dataset 09",
+      "uploadedBy": "Lulu Morton",
+      "updated": "2024-08-20",
+      "flagged": false,
+      "type": "Recently Available Datasets"
+    },
+    {
+      "datasetName": "Dataset 10",
+      "uploadedBy": "Robert Johnson",
+      "updated": "2024-09-15",
+      "flagged": false,
+      "type": "My Datasets"
+    }
+  ],
+  "stats": [
+    {
+      "title": "Dataset Reviews",
+      "value": 100,
+      "trend": "up",
+      "percentage": 10
+    },
+    {
+      "title": "Failed Uploads",
+      "value": 10,
+      "trend": "down",
+      "percentage": 2
+    },
+    {
+      "title": "Shared by Company",
+      "value": 15,
+      "trend": "up",
+      "percentage": 25
+    }
+  ],
+  "profile": {
+    "name": "Jennifer Doe",
+    "organization": "Bank ABC",
+    "activity": [
+      {
+        "timestamp": "2024-11-05T18:00:00Z",
+        "type": "login",
+        "username": "Jennifer Doe",
+        "dataset": null,
+        "status": null
+      },
+      {
+        "timestamp": "2024-09-23T14:24:00Z",
+        "type": "upload",
+        "username": "Jennifer Doe",
+        "dataset": "Dataset 01",
+        "status": null
+      },
+      {
+        "timestamp": "2024-08-17T10:30:00Z",
+        "description": "Issue {{dataset}}: Hydration Failed",
+        "type": "issue",
+        "username": "Jennifer Doe",
+        "dataset": "Dataset 03",
+        "status": "Hydration Failed"
+      }
+    ]
+  },
+  "connections": [
+    {
+      "name": "Bank ABC",
+      "type": "Primary",
+      "lastSynced": "2024-11-03T10:00:00Z"
+    },
+    {
+      "name": "Partner XYZ",
+      "type": "Secondary",
+      "lastSynced": "2024-10-20T14:30:00Z"
+    },
+    {
+      "name": "DataHub Corp",
+      "type": "Tertiary",
+      "lastSynced": "2024-10-15T08:00:00Z"
+    }
+  ]
+}

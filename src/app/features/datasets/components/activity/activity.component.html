@@ -1,0 +1,40 @@
+<app-toggle-card
+  title="Activity"
+  [hasHeader]="true"
+  [hasToggle]="false"
+  initialState="expanded"
+  [spaceContentBottom]="false"
+>
+  <ng-container>
+    <div class="activity-list">
+      <!-- Map activities to template -->
+      @for (act of activity; track $index) {
+        <div class="activity">
+          <div class="activity-title">
+            @switch (act.type) {
+              @case ("login") {
+                <strong>{{ act.type | titlecase }}: {{ act.username }}</strong>
+              }
+              @case ("upload") {
+                <strong>{{ act.type | titlecase }} {{ act.dataset }}</strong> by
+                {{ act.username }}
+              }
+              @case ("issue") {
+                <strong>{{ act.type | titlecase }} {{ act.dataset }}:</strong>
+                {{ act.username }}
+              }
+              @default {
+                Unknown activity
+              }
+            }
+          </div>
+          <p class="activity-date text-grey">
+            {{ act.timestamp | date: "dd MMM yyyy HH:mm" }}
+          </p>
+        </div>
+      }
+    </div>
+    <!-- Navigate to all activities -->
+    <a routerLink="/placeholder" class="button-inline">View All Activity</a>
+  </ng-container>
+</app-toggle-card>

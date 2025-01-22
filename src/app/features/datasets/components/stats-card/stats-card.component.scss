@@ -1,0 +1,22 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+:host {
+  .stats-card {
+    @include mixins.resetMatIconSize();
+
+    &,
+    span {
+      gap: 0.355rem;
+    }
+    span {
+      font-weight: 400;
+    }
+  }
+
+  ::ng-deep {
+    app-toggle-card .toggle-card-title {
+      line-height: 1;
+    }
+  }
+}

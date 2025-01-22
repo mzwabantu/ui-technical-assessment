@@ -1,0 +1,55 @@
+<mat-toolbar role="navigation" aria-label="User navigation">
+  <div class="container flex-end">
+    <!-- User Notification Icon with Badge -->
+    <div class="user-info flex-end">
+      <button
+        mat-icon-button
+        class="mat-icon-button"
+        aria-label="View notifications"
+        [attr.aria-live]="'polite'"
+        [attr.aria-describedby]="'notifications-description'"
+      >
+        <mat-icon
+          matBadge="1"
+          aria-hidden="false"
+          aria-label="Notifications icon"
+          fontIcon="notifications"
+          matBadgeSize="small"
+          role="img"
+        />
+        <span class="cdk-visually-hidden"> You have 1 new notification. </span>
+      </button>
+      <mat-divider
+        [vertical]="true"
+        role="separator"
+        aria-hidden="true"
+      ></mat-divider>
+
+      <!-- Menu -->
+      <button
+        class="menu-trigger"
+        [matMenuTriggerFor]="menu"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        aria-label="Open user menu"
+      >
+        <div class="user text-sm">
+          <h4 class="user-name">{{ profile().name }}</h4>
+          <p class="user-company">{{ profile().organization }}</p>
+        </div>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Menu drop down arrow"
+          fontIcon="keyboard_arrow_down"
+          role="presentation"
+          aria-hidden="true"
+        />
+      </button>
+      <mat-menu #menu="matMenu" aria-label="User menu">
+        <button mat-menu-item aria-label="View datasets">Datasets</button>
+        <button mat-menu-item aria-label="View profile">Profile</button>
+        <button mat-menu-item aria-label="Logout">Logout</button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>

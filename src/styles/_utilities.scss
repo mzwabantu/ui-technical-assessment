@@ -1,0 +1,95 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+// Typography
+.text {
+  // Sizing
+  &-sm {
+    font-size: var.$font-size-sm;
+  }
+  &-md {
+    font-size: var.$font-size-md;
+  }
+  &-lg {
+    font-size: var.$font-size-lg;
+  }
+  // Color
+  &-red {
+    color: var.$red;
+  }
+  &-blue {
+    color: var.$primary-blue;
+  }
+  &-grey {
+    color: var.$grey-06;
+  }
+}
+
+// Spacing
+.padding {
+  &-xs {
+    padding: var.$spacing-xs;
+  }
+  &-sm {
+    padding: var.$spacing-sm;
+  }
+  &-md {
+    padding: var.$spacing-md;
+  }
+  &-lg {
+    padding: var.$spacing-lg;
+  }
+}
+
+// Layout
+.flex {
+  &-center {
+    @include mixins.flex(center, center);
+  }
+  &-start {
+    @include mixins.flex(start, center);
+  }
+  &-end {
+    @include mixins.flex(end, center);
+  }
+}
+.bleed {
+  position: absolute;
+  top: 100%;
+  left: -1.5rem;
+  right: -1.5rem;
+}
+
+// Borders
+.border {
+  &-grey {
+    @include mixins.border(var.$grey-03, 1px);
+  }
+  &-blue {
+    @include mixins.border(var.$primary-blue, 1px);
+  }
+}
+
+// Components
+.card {
+  background-color: var.$white;
+  border-radius: 6px;
+  @include mixins.border(var.$grey-03, 1px);
+  padding: var.$spacing-md;
+
+  &.sm {
+    padding: var.$spacing-sm var.$spacing-md;
+  }
+
+  & * {
+    position: relative;
+  }
+}
+
+// Appearance
+.shadow {
+  box-shadow: 0 2px 8px #1e1d590d;
+}
+.round {
+  border-radius: 5rem;
+}

@@ -1,0 +1,70 @@
+@use "variables" as var;
+@use "mixins" as mixins;
+
+.mat-icon-button,
+.mat-mdc-icon-button.mat-icon-button {
+  --size: 34px;
+  width: var(--size);
+  height: var(--size);
+  color: var.$text-on-light;
+  background-color: var.$grey-01;
+  border-radius: 0.255rem;
+  @include mixins.border(var.$grey-03, 0.5px);
+
+  // Button Icon
+  .mat-icon {
+    font-size: 18px;
+    line-height: var.$line-height;
+  }
+
+  // Button Shape
+  &.round {
+    border-radius: 5rem;
+  }
+
+  // Button Sizes
+  &.small {
+    --size: 20px;
+
+    .mat-icon {
+      font-size: var.$font-size-sm;
+    }
+  }
+  &.medium {
+    --size: 28px;
+
+    .mat-icon {
+      font-size: var.$font-size-md;
+    }
+  }
+
+  // If button has label next to icon
+  &.labeled {
+    width: auto;
+    height: calc(var(--size) * 1.2);
+    gap: var.$spacing-xs;
+    padding-left: calc(var(--size) / 2);
+    padding-right: calc(var(--size) / 2);
+    font-size: var.$font-size-sm;
+
+    @include mixins.flex(center, center);
+    @include mixins.resetMatIconSize();
+  }
+}
+
+// Inline button with underline
+.button-inline {
+  &:visited,
+  & {
+    display: inline-block;
+    background-color: unset;
+    text-decoration: underline;
+    color: var.$text-on-light;
+    font-size: var.$font-size-sm;
+  }
+
+  &:hover,
+  &:active {
+    color: var.$primary-blue;
+  }
+}
