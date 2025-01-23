@@ -4,4 +4,5 @@ export interface DataTableColumn {
   key: string;
   label: string;
   options?: ColumnOption;
+  canSort?: boolean;
 }

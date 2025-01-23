@@ -1,12 +1,10 @@
 import { Routes } from "@angular/router";
+import { DashboardComponent } from "./features/datasets/pages/dashboard/dashboard.component";
 
 export const routes: Routes = [
   {
     path: "dashboard",
-    loadComponent: () =>
-      import("./features/datasets/pages/dashboard/dashboard.component").then(
-        (m) => m.DashboardComponent,
-      ),
+    component: DashboardComponent,
   },
   {
     path: "",

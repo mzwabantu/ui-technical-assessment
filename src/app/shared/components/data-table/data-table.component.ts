@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import {
   AfterViewInit,
   Component,
+  inject,
   Input,
   OnChanges,
   SimpleChanges,
@@ -12,11 +13,13 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatPaginator, MatPaginatorModule } from "@angular/material/paginator";
 import { MatTableDataSource, MatTableModule } from "@angular/material/table";
 import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatSort, MatSortModule, Sort } from "@angular/material/sort";
 
 import { Dataset } from "../../../core/models/dataset";
 import { DataTableColumn } from "../../models/data-table-column";
 import { ColumnOption } from "../../models/column-option";
 import { Router } from "@angular/router";
+import { LiveAnnouncer } from "@angular/cdk/a11y";
 
 @Component({
   selector: "app-data-table",
@@ -28,6 +31,7 @@ import { Router } from "@angular/router";
     MatTooltipModule,
     MatButtonModule,
     MatTableModule,
+    MatSortModule,
   ],
   templateUrl: "./data-table.component.html",
   styleUrls: ["./data-table.component.scss"],
@@ -44,9 +48,14 @@ export class DataTableComponent<T> implements OnChanges, AfterViewInit {
   displayedColumnKeys: string[] = [];
   dataSource!: MatTableDataSource<Partial<T>>;
 
+  private _liveAnnouncer = inject(LiveAnnouncer);
+
   // Grabs paginator element from DOM
   @ViewChild("paginator")
   paginator!: MatPaginator;
+
+  // Grabs MatSort instance from the DOM
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private router: Router) {}
 
@@ -61,6 +70,8 @@ export class DataTableComponent<T> implements OnChanges, AfterViewInit {
     // Initialize displayed columns based on the keys in `columns`
     this.displayedColumnKeys = this.columns.map((col) => col.key);
     this.dataSource.paginator = this.paginator;
+    // Bind sort to MatTableDataSource
+    this.dataSource.sort = this.sort;
   }
 
   // Routes to placeholder page
@@ -77,5 +88,13 @@ export class DataTableComponent<T> implements OnChanges, AfterViewInit {
       "padding-left": options["padding-left"] || "revert-layer",
       "padding-right": options["padding-right"] || "revert-layer",
     };
+  }
+
+  announceSortChange(sortState: Sort) {
+    if (sortState.direction) {
+      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
+    } else {
+      this._liveAnnouncer.announce("Sorting cleared");
+    }
   }
 }

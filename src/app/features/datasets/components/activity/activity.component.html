@@ -31,9 +31,11 @@
               }
             }
           </div>
-          <p class="activity-date text-grey">
-            {{ act.timestamp | date: "dd MMM yyyy HH:mm" }}
-          </p>
+          @if (act.timestamp) {
+            <p class="activity-date text-grey">
+              {{ act.timestamp | date: "dd MMM yyyy HH:mm" }}
+            </p>
+          }
         </div>
       }
     </div>

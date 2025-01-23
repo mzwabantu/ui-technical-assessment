@@ -93,6 +93,13 @@
       container-shape: 6px,
     )
   );
+
+  // Mat Sort Arrow
+  @include mat.sort-overrides(
+    (
+      arrow-color: var.$grey-05,
+    )
+  );
 }
 
 /* Google provided cdn for Rounded Symbols not working as expected on my local,

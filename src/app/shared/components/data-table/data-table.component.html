@@ -1,15 +1,33 @@
 <div class="data-table" [class.border-grey]="hasBorder">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    matSort
+    (matSortChange)="announceSortChange($event)"
+    class="mat-elevation-z8"
+  >
     <ng-container *ngFor="let column of columns" [matColumnDef]="column.key">
       <!-- Headings if hasHeader prop is true -->
       <ng-container *ngIf="hasHeader">
-        <th
-          [ngStyle]="applyColumnOptions(column?.options)"
-          mat-header-cell
-          *matHeaderCellDef
-        >
-          {{ column.label }}
-        </th>
+        <ng-container *ngIf="column.canSort">
+          <th
+            [ngStyle]="applyColumnOptions(column?.options)"
+            mat-header-cell
+            mat-sort-header
+            *matHeaderCellDef
+          >
+            {{ column.label }}
+          </th>
+        </ng-container>
+        <ng-container *ngIf="!column.canSort">
+          <th
+            [ngStyle]="applyColumnOptions(column?.options)"
+            mat-header-cell
+            *matHeaderCellDef
+          >
+            {{ column.label }}
+          </th>
+        </ng-container>
       </ng-container>
 
       <!-- Table Cells with custom elements by key -->

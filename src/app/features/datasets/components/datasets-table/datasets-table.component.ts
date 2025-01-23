@@ -25,9 +25,9 @@ export class DatasetsTableComponent {
         "padding-left": "34px",
       },
     },
-    { key: "datasetName", label: "Dataset Name" },
-    { key: "uploadedBy", label: "Uploaded By" },
-    { key: "updated", label: "Updated" },
+    { key: "datasetName", label: "Dataset Name", canSort: true },
+    { key: "uploadedBy", label: "Uploaded By", canSort: true },
+    { key: "updated", label: "Updated", canSort: true },
     { key: "actions", label: "Actions" },
   ];
 }

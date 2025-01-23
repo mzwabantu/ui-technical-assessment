@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { AsyncPipe, DatePipe, TitleCasePipe } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
@@ -21,6 +21,7 @@ import { selectActivities } from "../../../../core/state/app.selectors";
   ],
   templateUrl: "./activity.component.html",
   styleUrl: "./activity.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ActivityComponent {
   activities$: Observable<Activity[]>;

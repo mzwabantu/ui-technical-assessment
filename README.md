@@ -32,3 +32,20 @@
 - **Service Layer**: The service layer is used to interact with mock backend APIs, manage business logic, and dispatch actions via NgRx. For example, the ActivityService handles logging activities and fetching random activities.
 - **Reusable Components**: Created reusable components, such as a data table ` (DataTableComponent)`, for displaying datasets in a table with features like pagination and sorting. Custom components like alerts and modals were also created for managing notifications and other UI elements.
 - **Environment Configuration**:  Environment-specific configurations for the API URLs (e.g., development vs. production) were managed in the environment.ts files, making it easy to switch between mock and real backends as needed.
+
+
+## Interactions
+**Activity**
+- When ever you refresh the page a new activity logged to the NGRx store, 
+- When the logActivity action is dispatched a side effect is triggered to update the backend, 
+- On page refresh the store will also be updated will getActivity request to the backend,
+- Lastly when you click on logout a logout activity type is logged - triggering side effect as mentioned
+
+**Notifications**
+- Are stored in the AppState with a read property set to false by default
+- When ever you click on one from the drop down in the banner, read is set to true thus hiding it from the dropdown
+- No side effects are perfomed on notication actions there the state resets or relaod
+
+**Routing**
+- On most of the buttons and link you will be routed to a placeholder page.
+

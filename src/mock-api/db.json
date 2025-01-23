@@ -251,7 +251,7 @@
   "activity": [
     {
       "id": "2",
-      "timestamp": "2024-11-05T18:0:000Z",
+      "timestamp": "2024-11-18T01:46:50.018Z",
       "type": "login",
       "username": "Jennifer Doe",
       "dataset": null,
@@ -259,7 +259,7 @@
     },
     {
       "id": "2",
-      "timestamp": "2024-09-23T14:24:00Z",
+      "timestamp": "2024-09-23T14:24:50.018Z",
       "type": "upload",
       "username": "Jennifer Doe",
       "dataset": "Dataset 01",
@@ -267,75 +267,11 @@
     },
     {
       "id": "3",
-      "timestamp": "2024-08-17T10:30:00Z",
+      "timestamp": "2024-08-17T10:30:50.018Z",
       "description": "Issue {{dataset}}: Hydration Failed",
       "type": "issue",
       "username": "Jennifer Doe",
       "dataset": "Dataset 03",
-      "status": "Hydration Failed"
-    },
-    {
-      "id": "834b",
-      "type": "login",
-      "timestamp": "2025-01-22T23:11:24.848Z",
-      "username": "Jennifer Doe",
-      "dataset": null,
-      "status": "Hydration Failed"
-    },
-    {
-      "id": "f32c",
-      "type": "upload",
-      "timestamp": "2025-01-22T23:11:28.164Z",
-      "username": "Jennifer Doe",
-      "dataset": "Dataset 7",
-      "status": null
-    },
-    {
-      "id": "6761",
-      "type": "issue",
-      "timestamp": "2025-01-22T23:25:22.924Z",
-      "username": "Jennifer Doe",
-      "dataset": "Dataset 8",
-      "status": null
-    },
-    {
-      "id": "a6a5",
-      "type": "issue",
-      "timestamp": "2025-01-22T23:40:32.121Z",
-      "username": "Jennifer Doe",
-      "dataset": "Dataset 6",
-      "status": "Hydration Failed"
-    },
-    {
-      "id": "ca0f",
-      "type": "login",
-      "timestamp": "2025-01-22T23:40:35.282Z",
-      "username": "Jennifer Doe",
-      "dataset": null,
-      "status": "Hydration Failed"
-    },
-    {
-      "id": "fc55",
-      "type": "issue",
-      "timestamp": "2025-01-23T00:21:24.326Z",
-      "username": "Jennifer Doe",
-      "dataset": "Dataset 10",
-      "status": "Hydration Failed"
-    },
-    {
-      "id": "1404",
-      "type": "upload",
-      "timestamp": "2025-01-23T00:22:17.292Z",
-      "username": "Jennifer Doe",
-      "dataset": "Dataset 10",
-      "status": "Hydration Failed"
-    },
-    {
-      "id": "dba2",
-      "type": "issue",
-      "timestamp": "2025-01-23T00:22:28.939Z",
-      "username": "Jennifer Doe",
-      "dataset": "Dataset 1",
       "status": "Hydration Failed"
     }
   ],
