@@ -1,15 +1,11 @@
 import { CommonModule } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
-import { FocusMonitor } from "@angular/cdk/a11y";
 import { MatDividerModule } from "@angular/material/divider";
 
 import {
   ChangeDetectionStrategy,
   Component,
   Input,
-  ElementRef,
-  AfterViewInit,
-  OnDestroy,
   OnChanges,
   SimpleChanges,
   signal,
@@ -23,10 +19,8 @@ import { Router } from "@angular/router";
   styleUrl: "./toggle-card.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ToggleCardComponent
-  implements AfterViewInit, OnDestroy, OnChanges
-{
-  @Input() title? = "Card Title";
+export class ToggleCardComponent implements OnChanges {
+  @Input() title = "Card Title";
   @Input() largeTitle = false;
   @Input() hasHeader = false;
   @Input() route!: string;
@@ -42,11 +36,7 @@ export class ToggleCardComponent
   // To toggle content section
   public isExpanded = signal<boolean>(false);
 
-  constructor(
-    private focusMonitor: FocusMonitor,
-    private elementRef: ElementRef,
-    private router: Router,
-  ) {}
+  constructor(private router: Router) {}
 
   // Switches arrow based on isExpanded
   public get toggleIcon(): "keyboard_arrow_down" | "keyboard_arrow_up" {
@@ -57,18 +47,8 @@ export class ToggleCardComponent
   ngOnChanges(changes: SimpleChanges): void {
     // Set initial toggle state
     if (changes["initialState"]?.firstChange) {
-      this.isExpanded.set(this.initialState === "expanded" ? true : false);
+      this.isExpanded.set(this.initialState === "expanded");
     }
-  }
-
-  ngAfterViewInit(): void {
-    // Monitoring the focus state of the element
-    this.focusMonitor.monitor(this.elementRef.nativeElement, true);
-  }
-
-  ngOnDestroy(): void {
-    // Stops monitoring the focus state of the element
-    this.focusMonitor.stopMonitoring(this.elementRef.nativeElement);
   }
 
   // Toggle content

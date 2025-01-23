@@ -1,7 +1,5 @@
 import { inject, Injectable } from "@angular/core";
-import { Observable, catchError } from "rxjs";
 import { Activity, ActivityStatusType, ActivityType } from "../models/activity";
-import { Profile } from "../models/profile";
 import { logActivity } from "../state/app.actions";
 import { Store } from "@ngrx/store";
 import { AppState } from "../state/app.state";

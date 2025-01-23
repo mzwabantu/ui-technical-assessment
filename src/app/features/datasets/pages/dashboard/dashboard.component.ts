@@ -120,7 +120,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   // Method to filter Datasets by type
-  private setDatasetByType(data: Dataset[], type: DsEnum): Partial<Dataset>[] {
+  setDatasetByType(data: Dataset[], type: DsEnum): Partial<Dataset>[] {
     return data
       .filter((d) => (d.type as DsEnum) === type)
       .map((d) => ({ datasetName: d.datasetName, updated: d.updated }));

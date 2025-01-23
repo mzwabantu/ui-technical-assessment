@@ -1,11 +1,12 @@
 import { Routes } from "@angular/router";
-import { DashboardComponent } from "./features/datasets/pages/dashboard/dashboard.component";
-import { PlaceholderComponent } from "./shared/components/placeholder/placeholder.component";
 
 export const routes: Routes = [
   {
     path: "dashboard",
-    component: DashboardComponent,
+    loadComponent: () =>
+      import("./features/datasets/pages/dashboard/dashboard.component").then(
+        (m) => m.DashboardComponent,
+      ),
   },
   {
     path: "",
@@ -14,7 +15,10 @@ export const routes: Routes = [
   },
   {
     path: "placeholder",
-    component: PlaceholderComponent,
+    loadComponent: () =>
+      import("./shared/components/placeholder/placeholder.component").then(
+        (m) => m.PlaceholderComponent,
+      ),
   },
   {
     path: "**",
